@@ -1,0 +1,37 @@
+
+<mat-card>
+    <mat-toolbar color="primary">
+      <span>Produtos</span>
+    </mat-toolbar>
+
+
+<table mat-table [dataSource]="produtos" >
+
+  <!-- nome Column -->
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef> Nome </th>
+    <td mat-cell *matCellDef="let produto"> {{produto.nome}} </td>
+  </ng-container>
+
+  <!-- Descricao Column -->
+  <ng-container matColumnDef="descricao">
+    <th mat-header-cell *matHeaderCellDef>Descricao </th>
+    <td mat-cell *matCellDef="let produto"> {{produto.descricao}} </td>
+  </ng-container>
+
+  <!-- Tensao Column -->
+  <ng-container matColumnDef="tensao">
+    <th mat-header-cell *matHeaderCellDef> Tensão </th>
+    <td mat-cell *matCellDef="let produto"> {{produto.tensao}} </td>
+  </ng-container>
+
+  <!-- Marca Column -->
+  <ng-container matColumnDef="marca">
+    <th mat-header-cell *matHeaderCellDef> Marca </th>
+    <td mat-cell *matCellDef="let produto"> {{produto.marca}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</mat-card>
